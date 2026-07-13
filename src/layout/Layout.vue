@@ -1,15 +1,17 @@
 <script setup lang="ts">
+// @ts-ignore
 import Navbar from '@/components/Navbar.vue';
+// @ts-ignore
 import Footer from '@/components/Footer.vue'
 
 </script>
 
 <template>
-    <main>
+    <div>
         <Navbar />
         <main>
             <slot />
         </main>
         <Footer />
-    </main>
+    </div>
 </template>

@@ -1,178 +1,473 @@
 <script setup>
-import Layout from '@/layout/Layout.vue';
+import Layout from '@/layout/Layout.vue'
+import { ref } from 'vue'
 
+const mobileMenuOpen = ref(false)
+
+const apkUrl = '/kinetic.apk'
+
+const features = [
+    {
+        title: 'Cálculo 1RM de Precisión',
+        description: 'Estima tu una-repetición-máxima con la fórmula de Epley, calibrada para cargas reales de entrenamiento de fuerza.',
+        formula: true,
+        icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+    },
+    {
+        title: 'Registro de Volumen',
+        description: 'Cada serie, cada repetición, cada kilo. Un log estructurado que convierte tu entrenamiento en datos accionables.',
+        icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z',
+    },
+    {
+        title: 'Librería de Ejercicios',
+        description: 'Catálogo curado con biomecánica correcta para los movimientos base: sentadilla, peso muerto, press de banca y más.',
+        icon: 'M4 6h16M4 12h16M4 18h7',
+    },
+]
+
+const team = [
+    { name: 'Aaron Gallardo Malpica', role: 'Product Owner', initials: 'AG' },
+    { name: 'Diego Blanco Rodriguez', role: 'Scrum Master', initials: 'DB' },
+    { name: 'Erick Daniel Vargas Corona', role: 'Líder de Desarrollo', initials: 'EV' }
+]
+
+const screenshots = [
+    { id: 1, label: 'Módulo Perfil' },
+    { id: 2, label: 'Rutina Log' },
+    { id: 3, label: 'Calculadora 1RM' },
+    { id: 4, label: 'Librería de Ejercicios' },
+]
 </script>
 
 <template>
     <Layout>
         <div
-            class="min-h-screen bg-kinetic-darkBg text-gray-200 font-body selection:bg-kinetic-primary selection:text-white overflow-x-hidden">
+            class="min-h-screen bg-kinetic-darkBg text-white font-body antialiased selection:bg-kinetic-tertiary selection:text-kinetic-darkBg">
 
+            <main class="pt-20">
 
-            <!-- Hero Section -->
-            <section
-                class="relative pt-32 pb-20 md:pt-40 md:pb-32 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
-                <div class="flex-1 text-center lg:text-left z-10">
+                <!-- ============================= -->
+                <!-- HERO SECTION -->
+                <!-- ============================= -->
+                <section class="relative overflow-hidden">
+                    <!-- ambient glow -->
                     <div
-                        class="inline-flex items-center space-x-2 bg-kinetic-secondary px-4 py-2 rounded-full border border-kinetic-neutralBg mb-6">
-                        <span class="w-2 h-2 rounded-full bg-kinetic-tertiary animate-pulse"></span>
-                        <span class="text-xs font-headline tracking-widest text-gray-400 uppercase">The Precision
-                            Standard v1.0</span>
-                    </div>
-                    <h1
-                        class="font-headline text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-none mb-6 border-none p-0">
-                        START YOUR <br />
-                        <span
-                            class="bg-gradient-to-r from-kinetic-primary via-kinetic-tertiary to-white bg-clip-text text-transparent">JOURNEY</span>
-                    </h1>
-                    <p
-                        class="text-gray-400 max-w-lg text-base sm:text-lg mb-10 mx-auto lg:mx-0 font-light leading-relaxed">
-                        Lleva tu entrenamiento al siguiente nivel con precisión quirúrgica. Monitorea tus rutinas de
-                        hipertrofia, calcula tus RM estimadas mediante fórmulas de alta precisión y desbloquea tu
-                        verdadero potencial físico.
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                        <a href="#download"
-                            class="w-full sm:w-auto text-center px-8 py-4 rounded-xl bg-kinetic-primary hover:bg-kinetic-primary/90 text-white font-headline font-bold text-sm tracking-wide shadow-xl shadow-kinetic-primary/20 transition-all duration-300 transform hover:-translate-y-0.5">
-                            Descargar APK Activo
-                        </a>
-                        <a href="#features"
-                            class="w-full sm:w-auto text-center px-8 py-4 rounded-xl bg-kinetic-secondary hover:bg-kinetic-neutralBg border border-kinetic-neutralBg text-gray-300 font-headline font-semibold text-sm transition-all">
-                            Explorar Funciones
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Smartphone Premium Mockup -->
-                <div class="flex-1 relative flex justify-center w-full max-w-md lg:max-w-full">
-                    <div
-                        class="absolute -inset-4 bg-gradient-to-tr from-kinetic-primary/10 to-kinetic-tertiary/10 rounded-full blur-3xl opacity-60">
+                        class="pointer-events-none absolute -top-40 -left-40 h-96 w-96 rounded-full bg-kinetic-primary/20 blur-[120px]">
                     </div>
                     <div
-                        class="relative border-[6px] border-kinetic-neutralBg bg-kinetic-secondary rounded-[40px] shadow-2xl p-3 w-72 h-[580px] overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
-                        <div
-                            class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-4 bg-kinetic-neutralBg rounded-b-2xl z-30">
-                        </div>
-                        <!-- Contenido Simulado App -->
-                        <div class="h-full overflow-y-auto space-y-4 pt-6 px-3 bg-[#0b0c10]">
-                            <div class="flex justify-between items-center border-b border-kinetic-neutralBg/40 pb-2">
-                                <span class="text-xs font-headline font-bold text-kinetic-tertiary">HYPERTROPHY A</span>
-                                <span class="text-[10px] text-gray-500">00:42:15</span>
+                        class="pointer-events-none absolute top-40 -right-40 h-96 w-96 rounded-full bg-kinetic-tertiary/10 blur-[120px]">
+                    </div>
+
+                    <div
+                        class="relative max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-24 lg:pt-24 lg:pb-32 grid lg:grid-cols-2 gap-16 items-center">
+
+                        <!-- Left: copy -->
+                        <div class="relative z-10">
+                            <div
+                                class="inline-flex items-center gap-2 rounded-full border border-kinetic-neutralBg bg-kinetic-secondary/60 px-4 py-1.5 mb-8">
+                                <span class="h-1.5 w-1.5 rounded-full bg-kinetic-tertiary animate-pulse"></span>
+                                <span
+                                    class="font-body text-xs font-semibold uppercase tracking-widest text-white/60">Entrenamiento
+                                    de precisión</span>
                             </div>
-                            <div class="bg-kinetic-secondary border border-kinetic-neutralBg p-3 rounded-xl">
-                                <p class="text-xs font-bold text-white mb-1 m-0">Barbell Bench Press</p>
-                                <div class="flex justify-between text-[10px] text-gray-400">
-                                    <span>Set 1: 85kg x 8</span>
-                                    <span class="text-kinetic-tertiary">+12% Vol</span>
+
+                            <h1
+                                class="font-headline font-black uppercase leading-[0.95] tracking-tight text-5xl sm:text-6xl lg:text-7xl">
+                                <span class="block text-white">Start Your</span>
+                                <span
+                                    class="block bg-gradient-to-r from-kinetic-primary via-kinetic-tertiary to-kinetic-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-[gradientShift_6s_ease_infinite]">
+                                    Journey
+                                </span>
+                            </h1>
+
+                            <p class="mt-8 max-w-md font-body text-base sm:text-lg text-white/60 leading-relaxed">
+                                La aplicación de entrenamiento diseñada para atletas de élite. Rastrea tu volumen,
+                                calcula tu fuerza máxima y perfecciona cada repetición.
+                            </p>
+
+                            <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                                <a :href="apkUrl"
+                                    class="inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-kinetic-primary to-kinetic-tertiary px-8 py-4 font-headline font-bold uppercase tracking-wide text-kinetic-darkBg shadow-xl shadow-kinetic-primary/25 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-kinetic-tertiary/30">
+                                    <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
+                                        <path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14" stroke="currentColor"
+                                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Descargar APK
+                                </a>
+                                <a href="#features"
+                                    class="inline-flex items-center justify-center gap-2 rounded-xl border border-kinetic-neutralBg bg-kinetic-secondary/40 px-8 py-4 font-headline font-bold uppercase tracking-wide text-sm text-white/80 transition-all duration-300 transform hover:-translate-y-0.5 hover:border-kinetic-primary hover:text-white">
+                                    Ver Características
+                                </a>
+                            </div>
+
+                            <div
+                                class="mt-12 flex items-center gap-8 text-white/40 font-body text-xs uppercase tracking-widest">
+                                <span>Android 8.0+</span>
+                                <span class="h-3 w-px bg-kinetic-neutralBg"></span>
+                                <span>Sin anuncios</span>
+                                <span class="h-3 w-px bg-kinetic-neutralBg"></span>
+                                <span>Offline-ready</span>
+                            </div>
+                        </div>
+
+                        <!-- Right: phone mockup -->
+                        <div class="relative z-10 flex justify-center lg:justify-end">
+                            <div class="relative w-[280px] sm:w-[320px]">
+                                <!-- glow behind phone -->
+                                <div
+                                    class="absolute inset-0 -z-10 rounded-[3rem] bg-kinetic-primary/20 blur-3xl scale-90">
+                                </div>
+
+                                <!-- phone chassis -->
+                                <div
+                                    class="relative rounded-[2.5rem] border-[6px] border-kinetic-secondary bg-kinetic-darkBg shadow-2xl shadow-black/60 overflow-hidden">
+                                    <!-- notch -->
+                                    <div class="absolute top-0 inset-x-0 h-6 flex justify-center z-20">
+                                        <div class="h-5 w-24 rounded-b-2xl bg-kinetic-secondary"></div>
+                                    </div>
+
+                                    <!-- screen content -->
+                                    <div
+                                        class="aspect-[9/19.5] bg-gradient-to-b from-[#101215] to-kinetic-darkBg p-4 pt-9 flex flex-col gap-4">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <p
+                                                    class="font-body text-[10px] uppercase tracking-widest text-white/40">
+                                                    Bienvenido</p>
+                                                <p class="font-headline font-bold text-sm text-white">Alex Mercer</p>
+                                            </div>
+                                            <div
+                                                class="h-8 w-8 rounded-full bg-gradient-to-br from-kinetic-primary to-kinetic-tertiary">
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="rounded-2xl bg-kinetic-secondary border border-kinetic-neutralBg p-4">
+                                            <p
+                                                class="font-body text-[10px] uppercase tracking-widest text-kinetic-tertiary mb-1">
+                                                1RM Actual</p>
+                                            <p class="font-headline font-black text-3xl text-white">225 <span
+                                                    class="text-base text-white/50">KG</span></p>
+                                            <p class="font-body text-[10px] text-white/40 mt-1">Sentadilla trasera</p>
+                                        </div>
+
+                                        <div
+                                            class="rounded-2xl bg-kinetic-secondary border border-kinetic-neutralBg p-4 flex-1">
+                                            <p
+                                                class="font-body text-[10px] uppercase tracking-widest text-white/40 mb-3">
+                                                Volumen semanal</p>
+                                            <div class="flex items-end gap-1.5 h-20">
+                                                <div class="flex-1 rounded-t bg-kinetic-primary/40" style="height: 40%">
+                                                </div>
+                                                <div class="flex-1 rounded-t bg-kinetic-primary/60" style="height: 65%">
+                                                </div>
+                                                <div class="flex-1 rounded-t bg-kinetic-tertiary" style="height: 90%">
+                                                </div>
+                                                <div class="flex-1 rounded-t bg-kinetic-primary/50" style="height: 55%">
+                                                </div>
+                                                <div class="flex-1 rounded-t bg-kinetic-primary/70" style="height: 75%">
+                                                </div>
+                                                <div class="flex-1 rounded-t bg-kinetic-primary/30" style="height: 30%">
+                                                </div>
+                                                <div class="flex-1 rounded-t bg-kinetic-tertiary/70"
+                                                    style="height: 85%"></div>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="rounded-2xl bg-gradient-to-r from-kinetic-primary to-kinetic-tertiary p-3 text-center">
+                                            <p
+                                                class="font-headline font-bold text-xs uppercase tracking-wide text-kinetic-darkBg">
+                                                Registrar serie</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div
-                                class="w-full h-24 bg-gradient-to-t from-kinetic-primary/20 to-transparent rounded-xl border border-kinetic-primary/30 flex items-end p-2">
-                                <span class="text-[18px] font-headline font-black text-white">225 <span
-                                        class="text-xs font-light text-gray-400">KG 1RM</span></span>
-                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <!-- Seccion de Beneficios / Tarjetas Tecnologicas -->
-            <section id="features" class="py-20 bg-gradient-to-b from-kinetic-darkBg to-kinetic-secondary/30 px-6">
-                <div class="max-w-7xl mx-auto">
-                    <div class="text-center max-w-xl mx-auto mb-16">
-                        <h2
-                            class="text-2xl sm:text-3xl font-headline font-black text-white uppercase inline-block border-none p-0">
-                            Diseñado Para Atletas de Élite</h2>
-                        <p class="text-gray-400 text-sm mt-3">Ningún dato al azar. Cada métrica cuenta en tu camino a la
-                            progresión óptima.</p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <!-- Card 1 -->
-                        <div
-                            class="bg-kinetic-secondary/80 border border-kinetic-neutralBg p-8 rounded-2xl hover:border-kinetic-primary/50 transition-all group">
-                            <div
-                                class="w-12 h-12 bg-kinetic-neutralBg rounded-xl flex items-center justify-center mb-6 text-kinetic-primary group-hover:bg-kinetic-primary group-hover:text-white transition-colors">
-                                📊
-                            </div>
-                            <h3 class="text-lg font-headline font-bold text-white mb-3">Cálculo de 1RM Pro</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed">Aplica la fórmula matemática 1RM = w \cdot
-                                (1 + rac{r}{30}) para evaluar tu fuerza máxima en tiempo real de forma segura y sin
-                                fallos fatigosos.</p>
+                <!-- ============================= -->
+                <!-- FEATURES SECTION -->
+                <!-- ============================= -->
+                <section id="features" class="relative py-24 lg:py-32 border-t border-kinetic-neutralBg/60">
+                    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                        <div class="max-w-2xl mb-16">
+                            <p class="font-body text-xs font-bold uppercase tracking-widest text-kinetic-tertiary mb-4">
+                                Características</p>
+                            <h2
+                                class="font-headline font-black uppercase text-4xl sm:text-5xl leading-tight tracking-tight">
+                                Herramientas de precisión<br class="hidden sm:block" /> para atletas serios
+                            </h2>
                         </div>
-                        <!-- Card 2 -->
-                        <div
-                            class="bg-kinetic-secondary/80 border border-kinetic-neutralBg p-8 rounded-2xl hover:border-kinetic-tertiary/50 transition-all group">
-                            <div
-                                class="w-12 h-12 bg-kinetic-neutralBg rounded-xl flex items-center justify-center mb-6 text-kinetic-tertiary group-hover:bg-kinetic-tertiary group-hover:text-black transition-colors">
-                                ⚡
-                            </div>
-                            <h3 class="text-lg font-headline font-bold text-white mb-3">Volumen & Rutina Log</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed">Registra series, repeticiones previas e
-                                incrementos de volumen de manera ultra fluida, optimizada exclusivamente para pantallas
-                                táctiles de smartphone.</p>
-                        </div>
-                        <!-- Card 3 -->
-                        <div
-                            class="bg-kinetic-secondary/80 border border-kinetic-neutralBg p-8 rounded-2xl hover:border-kinetic-primary/50 transition-all group">
-                            <div
-                                class="w-12 h-12 bg-kinetic-neutralBg rounded-xl flex items-center justify-center mb-6 text-kinetic-primary group-hover:bg-kinetic-primary group-hover:text-white transition-colors">
-                                🧠
-                            </div>
-                            <h3 class="text-lg font-headline font-bold text-white mb-3">Coach Insights Intuitivos</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed">Analiza las tendencias de crecimiento de tu
-                                tonelaje semanal con gráficos limpios que exponen tus áreas de estancamiento y aceleran
-                                la hipertrofia.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            <!-- Sección de Screenshots Dinámicos -->
-            <section class="py-20 px-6 max-w-7xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-2xl font-headline font-bold text-white uppercase border-none p-0">Interfaz de
-                        Precisión Impecable</h2>
-                </div>
-                <div
-                    class="flex flex-nowrap overflow-x-auto gap-6 pb-6 scrollbar-thin scrollbar-thumb-kinetic-neutralBg">
-                    <div v-for="i in 4" :key="i"
-                        class="flex-shrink-0 w-64 h-[450px] bg-kinetic-secondary border border-kinetic-neutralBg rounded-2xl p-4 flex flex-col justify-between">
-                        <div
-                            class="w-full h-3/4 bg-kinetic-darkBg rounded-xl border border-kinetic-neutralBg flex items-center justify-center text-xs text-gray-500">
-                            [ Screenshot Móvil Vista {{ i }} ]
-                        </div>
-                        <div class="pt-2">
-                            <h4 class="text-sm font-headline font-bold text-white m-0">{{ i === 1 ? 'Módulo Perfil' : i
-                                === 2 ? 'Rutina Log' : i === 3 ? 'Calculadora 1RM' : 'Librería de Ejercicios' }}</h4>
-                            <p class="text-xs text-gray-400 mt-1 m-0">Control absoluto de tus métricas críticas.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div v-for="feature in features" :key="feature.title"
+                                class="group relative rounded-2xl border border-kinetic-neutralBg bg-kinetic-secondary p-8 transition-all duration-300 transform hover:-translate-y-0.5 hover:border-kinetic-primary">
+                                <div
+                                    class="flex h-12 w-12 items-center justify-center rounded-xl bg-kinetic-neutralBg/60 text-kinetic-tertiary mb-6 transition-colors duration-300 group-hover:bg-kinetic-primary/10">
+                                    <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6">
+                                        <path :d="feature.icon" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <h3 class="font-headline font-bold uppercase text-lg tracking-tight mb-3">{{
+                                    feature.title }}</h3>
+                                <p class="font-body text-sm text-white/55 leading-relaxed">{{ feature.description }}</p>
 
-            <!-- CTA Final de Conversión / Descarga APK -->
-            <section id="download"
-                class="py-24 px-6 bg-gradient-to-t from-kinetic-secondary to-kinetic-darkBg text-center border-t border-kinetic-neutralBg/40 relative overflow-hidden">
-                <div
-                    class="absolute -top-24 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-kinetic-primary/10 rounded-full blur-3xl">
-                </div>
-                <div class="max-w-2xl mx-auto relative z-10">
-                    <h2 class="text-3xl sm:text-5xl font-headline font-black text-white mb-6 border-none p-0">READY TO
-                        BREAK <br /><span class="text-kinetic-tertiary">YOUR LIMITS?</span></h2>
-                    <p class="text-gray-400 text-base mb-10 font-light">
-                        Descarga la última versión de Kinetic de forma directa y segura e instálala en tu dispositivo
-                        Android al instante.
-                    </p>
-                    <div class="inline-flex flex-col items-center gap-4 w-full sm:w-auto">
-                        <a href="/downloads/kinetic-latest.apk" download
-                            class="w-full sm:w-auto px-10 py-5 bg-gradient-to-r from-kinetic-primary to-kinetic-tertiary text-black font-headline font-black text-base rounded-xl shadow-xl shadow-kinetic-primary/20 hover:opacity-95 transform hover:-translate-y-1 transition-all duration-300">
-                            🚀 DESCARGAR ARCHIVO APK
-                        </a>
-                        <span class="text-xs text-gray-500 font-mono">Compatible con Android 10.0+ | SHA-256
-                            Verificado</span>
+                                <div v-if="feature.formula"
+                                    class="mt-6 rounded-lg border border-kinetic-neutralBg bg-kinetic-darkBg/60 px-4 py-3">
+                                    <p class="font-body text-sm text-kinetic-tertiary tracking-wide">
+                                        1RM = W &times; (1 + R &frasl; 30)
+                                    </p>
+                                    <p class="font-body text-[11px] text-white/35 mt-1">W = peso levantado · R =
+                                        repeticiones</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+
+                <!-- ============================= -->
+                <!-- TEAM SECTION -->
+                <!-- ============================= -->
+                <section id="team"
+                    class="relative py-24 lg:py-32 border-t border-kinetic-neutralBg/60 bg-kinetic-secondary/20">
+                    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                        <div class="max-w-2xl mb-16">
+                            <p class="font-body text-xs font-bold uppercase tracking-widest text-kinetic-primary mb-4">
+                                Acerca de nosotros</p>
+                            <h2
+                                class="font-headline font-black uppercase text-4xl sm:text-5xl leading-tight tracking-tight">
+                                Ingeniería detrás<br class="hidden sm:block" /> del rendimiento
+                            </h2>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div v-for="member in team" :key="member.name"
+                                class="group relative rounded-2xl border border-kinetic-neutralBg bg-kinetic-secondary overflow-hidden transition-all duration-300 transform hover:-translate-y-0.5 hover:border-kinetic-tertiary">
+                                <!-- top pattern strip -->
+                                <div class="h-1.5 w-full bg-gradient-to-r from-kinetic-primary to-kinetic-tertiary">
+                                </div>
+
+                                <div class="p-8">
+                                    <!-- abstract tech avatar -->
+                                    <div class="relative mx-auto mb-6 flex h-24 w-24 items-center justify-center">
+                                        <div
+                                            class="absolute inset-0 rounded-2xl border border-kinetic-tertiary/40 rotate-45 transition-transform duration-500 group-hover:rotate-[55deg]">
+                                        </div>
+                                        <div
+                                            class="absolute inset-2 rounded-2xl border border-kinetic-primary/40 rotate-12 transition-transform duration-500 group-hover:rotate-[22deg]">
+                                        </div>
+                                        <div
+                                            class="relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-kinetic-primary to-kinetic-tertiary">
+                                            <span class="font-headline font-black text-kinetic-darkBg text-sm">{{
+                                                member.initials }}</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <h3 class="font-headline font-bold text-base text-white mb-2 leading-snug">{{
+                                            member.name }}</h3>
+                                        <p
+                                            class="inline-block font-mono text-[11px] uppercase tracking-widest text-kinetic-tertiary border border-kinetic-neutralBg rounded-full px-3 py-1">
+                                            {{ member.role }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============================= -->
+                <!-- SCREENSHOTS SECTION -->
+                <!-- ============================= -->
+                <section id="screenshots" class="relative py-24 lg:py-32 border-t border-kinetic-neutralBg/60">
+                    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                        <div class="max-w-2xl mb-16">
+                            <p class="font-body text-xs font-bold uppercase tracking-widest text-kinetic-tertiary mb-4">
+                                Interfaz de precisión</p>
+                            <h2
+                                class="font-headline font-black uppercase text-4xl sm:text-5xl leading-tight tracking-tight">
+                                Diseñada para verse<br class="hidden sm:block" /> tan bien como funciona
+                            </h2>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                            <!-- Vista 1: Módulo Perfil -->
+                            <div
+                                class="rounded-2xl border border-kinetic-neutralBg bg-kinetic-secondary overflow-hidden transition-all duration-300 transform hover:-translate-y-0.5 hover:border-kinetic-primary">
+                                <div
+                                    class="aspect-[9/16] p-4 flex flex-col gap-3 bg-gradient-to-b from-[#101215] to-kinetic-darkBg">
+                                    <div class="flex flex-col items-center gap-2 mt-2">
+                                        <div
+                                            class="h-14 w-14 rounded-full bg-gradient-to-br from-kinetic-primary to-kinetic-tertiary">
+                                        </div>
+                                        <p class="font-headline font-bold text-xs text-white">Alex Mercer</p>
+                                        <span
+                                            class="font-mono text-[9px] uppercase tracking-widest text-kinetic-darkBg bg-kinetic-tertiary rounded-full px-2 py-0.5">Rango
+                                            Elite</span>
+                                    </div>
+                                    <div class="grid grid-cols-3 gap-1.5 mt-2">
+                                        <div class="rounded-lg bg-kinetic-neutralBg/50 p-2 text-center">
+                                            <p class="font-headline font-black text-xs text-white">225</p>
+                                            <p class="font-body text-[7px] uppercase text-white/40">Squat</p>
+                                        </div>
+                                        <div class="rounded-lg bg-kinetic-neutralBg/50 p-2 text-center">
+                                            <p class="font-headline font-black text-xs text-white">140</p>
+                                            <p class="font-body text-[7px] uppercase text-white/40">Bench</p>
+                                        </div>
+                                        <div class="rounded-lg bg-kinetic-neutralBg/50 p-2 text-center">
+                                            <p class="font-headline font-black text-xs text-white">260</p>
+                                            <p class="font-body text-[7px] uppercase text-white/40">Dead</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1 rounded-lg border border-dashed border-kinetic-neutralBg mt-1">
+                                    </div>
+                                </div>
+                                <p
+                                    class="font-body text-xs uppercase tracking-widest text-white/50 text-center py-4 border-t border-kinetic-neutralBg">
+                                    {{ screenshots[0].label }}</p>
+                            </div>
+
+                            <!-- Vista 2: Rutina Log -->
+                            <div
+                                class="rounded-2xl border border-kinetic-neutralBg bg-kinetic-secondary overflow-hidden transition-all duration-300 transform hover:-translate-y-0.5 hover:border-kinetic-primary">
+                                <div
+                                    class="aspect-[9/16] p-4 flex flex-col gap-2 bg-gradient-to-b from-[#101215] to-kinetic-darkBg">
+                                    <p class="font-body text-[9px] uppercase tracking-widest text-white/40 mb-1">
+                                        Hypertrophy · Día 3</p>
+                                    <div v-for="i in 4" :key="i"
+                                        class="rounded-lg bg-kinetic-neutralBg/40 border border-kinetic-neutralBg p-2 flex items-center justify-between">
+                                        <span class="font-body text-[9px] text-white/70">Serie {{ i }}</span>
+                                        <div class="flex gap-1">
+                                            <span class="h-1.5 w-6 rounded-full"
+                                                :class="i <= 2 ? 'bg-kinetic-tertiary' : 'bg-kinetic-neutralBg'"></span>
+                                            <span class="h-1.5 w-6 rounded-full"
+                                                :class="i <= 3 ? 'bg-kinetic-primary' : 'bg-kinetic-neutralBg'"></span>
+                                        </div>
+                                    </div>
+                                    <div class="flex-1"></div>
+                                    <div
+                                        class="rounded-lg bg-kinetic-primary/10 border border-kinetic-primary/30 p-2 text-center">
+                                        <p class="font-body text-[9px] text-kinetic-tertiary">+12% volumen vs. semana
+                                            pasada</p>
+                                    </div>
+                                </div>
+                                <p
+                                    class="font-body text-xs uppercase tracking-widest text-white/50 text-center py-4 border-t border-kinetic-neutralBg">
+                                    {{ screenshots[1].label }}</p>
+                            </div>
+
+                            <!-- Vista 3: Calculadora 1RM -->
+                            <div
+                                class="rounded-2xl border border-kinetic-neutralBg bg-kinetic-secondary overflow-hidden transition-all duration-300 transform hover:-translate-y-0.5 hover:border-kinetic-primary">
+                                <div
+                                    class="aspect-[9/16] p-4 flex flex-col gap-3 bg-gradient-to-b from-[#101215] to-kinetic-darkBg">
+                                    <p class="font-body text-[9px] uppercase tracking-widest text-white/40">Calculadora
+                                        1RM</p>
+                                    <div
+                                        class="rounded-lg bg-kinetic-neutralBg/40 border border-kinetic-neutralBg px-3 py-2">
+                                        <p class="font-body text-[8px] text-white/40">Peso (kg)</p>
+                                        <p class="font-headline font-bold text-sm text-white">180</p>
+                                    </div>
+                                    <div
+                                        class="rounded-lg bg-kinetic-neutralBg/40 border border-kinetic-neutralBg px-3 py-2">
+                                        <p class="font-body text-[8px] text-white/40">Repeticiones</p>
+                                        <p class="font-headline font-bold text-sm text-white">5</p>
+                                    </div>
+                                    <div
+                                        class="rounded-lg bg-gradient-to-r from-kinetic-primary to-kinetic-tertiary py-2 text-center mt-1">
+                                        <p class="font-headline font-bold text-[10px] uppercase text-kinetic-darkBg">
+                                            Calcular</p>
+                                    </div>
+                                    <div class="flex-1 flex items-center justify-center">
+                                        <p class="font-headline font-black text-2xl text-kinetic-tertiary">210<span
+                                                class="text-xs text-white/40 ml-1">KG</span></p>
+                                    </div>
+                                </div>
+                                <p
+                                    class="font-body text-xs uppercase tracking-widest text-white/50 text-center py-4 border-t border-kinetic-neutralBg">
+                                    {{ screenshots[2].label }}</p>
+                            </div>
+
+                            <!-- Vista 4: Librería de Ejercicios -->
+                            <div
+                                class="rounded-2xl border border-kinetic-neutralBg bg-kinetic-secondary overflow-hidden transition-all duration-300 transform hover:-translate-y-0.5 hover:border-kinetic-primary">
+                                <div
+                                    class="aspect-[9/16] p-4 flex flex-col gap-2 bg-gradient-to-b from-[#101215] to-kinetic-darkBg">
+                                    <p class="font-body text-[9px] uppercase tracking-widest text-white/40 mb-1">
+                                        Librería</p>
+                                    <div
+                                        class="rounded-lg bg-kinetic-neutralBg/40 border border-kinetic-neutralBg p-2.5">
+                                        <p class="font-body text-[10px] font-semibold text-white">Barbell Deadlift</p>
+                                        <p class="font-body text-[8px] text-white/40 mt-0.5">Posterior chain</p>
+                                    </div>
+                                    <div
+                                        class="rounded-lg bg-kinetic-neutralBg/40 border border-kinetic-neutralBg p-2.5">
+                                        <p class="font-body text-[10px] font-semibold text-white">Bench Press</p>
+                                        <p class="font-body text-[8px] text-white/40 mt-0.5">Push · Pecho</p>
+                                    </div>
+                                    <div
+                                        class="rounded-lg bg-kinetic-neutralBg/40 border border-kinetic-neutralBg p-2.5">
+                                        <p class="font-body text-[10px] font-semibold text-white">Back Squat</p>
+                                        <p class="font-body text-[8px] text-white/40 mt-0.5">Legs · Core</p>
+                                    </div>
+                                    <div
+                                        class="rounded-lg border border-dashed border-kinetic-neutralBg flex-1 flex items-center justify-center">
+                                        <p class="font-body text-[8px] text-white/25">+ 42 ejercicios más</p>
+                                    </div>
+                                </div>
+                                <p
+                                    class="font-body text-xs uppercase tracking-widest text-white/50 text-center py-4 border-t border-kinetic-neutralBg">
+                                    {{ screenshots[3].label }}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============================= -->
+                <!-- CTA FINAL -->
+                <!-- ============================= -->
+                <section id="download" class="relative py-24 lg:py-32 border-t border-kinetic-neutralBg/60">
+                    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                        <div
+                            class="relative overflow-hidden rounded-3xl border border-kinetic-neutralBg bg-gradient-to-br from-kinetic-primary/10 via-kinetic-secondary to-kinetic-tertiary/5 px-8 py-16 sm:px-16 sm:py-20 text-center">
+                            <div
+                                class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-64 w-64 rounded-full bg-kinetic-primary/20 blur-[100px]">
+                            </div>
+
+                            <p
+                                class="relative font-body text-xs font-bold uppercase tracking-widest text-kinetic-tertiary mb-5">
+                                Disponible ahora</p>
+                            <h2
+                                class="relative font-headline font-black uppercase text-4xl sm:text-6xl leading-tight tracking-tight max-w-3xl mx-auto">
+                                Tu próximo récord empieza con un descarga
+                            </h2>
+                            <p class="relative mt-6 max-w-lg mx-auto font-body text-white/55">
+                                Instala Kinetic Precision y empieza a entrenar con datos reales desde tu primera sesión.
+                            </p>
+
+                            <div class="relative mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                                <a :href="apkUrl"
+                                    class="inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-kinetic-primary to-kinetic-tertiary px-10 py-5 font-headline font-black uppercase tracking-wide text-kinetic-darkBg shadow-2xl shadow-kinetic-primary/30 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-kinetic-tertiary/40">
+                                    <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
+                                        <path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14" stroke="currentColor"
+                                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Descargar APK
+                                </a>
+                            </div>
+                            <p class="relative mt-6 font-body text-[11px] uppercase tracking-widest text-white/30">
+                                Android 8.0+ · 24 MB · v1.0</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
         </div>
     </Layout>
 </template>

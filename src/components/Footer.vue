@@ -16,14 +16,8 @@
             </div>
 
             <p class="font-body text-xs text-white/40 order-3 md:order-2">
-                &copy; 2026 Kinetic Precision. Todos los derechos reservados.
+                &copy; 2026 Kinetic. Todos los derechos reservados.
             </p>
-
-            <div class="flex items-center gap-6 order-2 md:order-3 font-body text-xs text-white/50">
-                <a href="#features" class="hover:text-white transition-colors duration-300">Características</a>
-                <a href="#team" class="hover:text-white transition-colors duration-300">Equipo</a>
-                <a href="#screenshots" class="hover:text-white transition-colors duration-300">Interfaz</a>
-            </div>
         </div>
     </footer>
 </template>

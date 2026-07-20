@@ -73,10 +73,10 @@ const screenshots = [
 
                             <h1
                                 class="font-headline font-black uppercase leading-[0.95] tracking-tight text-5xl sm:text-6xl lg:text-7xl">
-                                <span class="block text-white">Start Your</span>
+                                <span class="block text-white">Explota tu</span>
                                 <span
                                     class="block bg-gradient-to-r from-kinetic-primary via-kinetic-tertiary to-kinetic-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-[gradientShift_6s_ease_infinite]">
-                                    Journey
+                                    potencial
                                 </span>
                             </h1>
 

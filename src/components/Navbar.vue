@@ -28,6 +28,7 @@ const apkUrl = '#download'
                 <a href="#features" class="hover:text-white transition-colors duration-300">Características</a>
                 <a href="#team" class="hover:text-white transition-colors duration-300">Equipo</a>
                 <a href="#screenshots" class="hover:text-white transition-colors duration-300">Interfaz</a>
+                <a href="#docs" class="hover:text-white transition-colors duration-300">Documentación</a>
             </div>
 
             <div class="flex items-center gap-3">
@@ -63,6 +64,8 @@ const apkUrl = '#download'
                 class="hover:text-white transition-colors duration-300">Equipo</a>
             <a @click="mobileMenuOpen = false" href="#screenshots"
                 class="hover:text-white transition-colors duration-300">Interfaz</a>
+            <a @click="mobileMenuOpen = false" href="#docs"
+                class="hover:text-white transition-colors duration-300">Documentación</a>
             <a :href="apkUrl"
                 class="inline-flex items-center justify-center gap-2 rounded-full bg-kinetic-primary px-5 py-3 font-headline text-xs font-bold uppercase tracking-wide text-white transition-all duration-300 hover:bg-kinetic-tertiary hover:text-kinetic-darkBg">
                 Descargar APK

@@ -5,6 +5,8 @@ import { ref } from 'vue'
 const mobileMenuOpen = ref(false)
 
 const apkUrl = '/kinetic.apk'
+const repoUrl = 'https://github.com/Eroroshy/kinetic' // Reemplaza con el enlace real de tu repositorio
+const docUrl = '/memoria-kinetic.pdf'          // Reemplaza con la ruta real de tu documento
 
 const features = [
     {
@@ -425,6 +427,94 @@ const screenshots = [
                                     {{ screenshots[3].label }}</p>
                             </div>
 
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============================= -->
+                <!-- DOCUMENTATION SECTION (#docs) -->
+                <!-- ============================= -->
+                <section id="docs"
+                    class="relative py-24 lg:py-32 border-t border-kinetic-neutralBg/60 bg-kinetic-secondary/20 overflow-hidden">
+                    <!-- ambient glow for docs section -->
+                    <div
+                        class="pointer-events-none absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-kinetic-tertiary/10 blur-[100px]">
+                    </div>
+
+                    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                        <div class="max-w-2xl mb-16">
+                            <p class="font-body text-xs font-bold uppercase tracking-widest text-kinetic-primary mb-4">
+                                Documentación</p>
+                            <h2
+                                class="font-headline font-black uppercase text-4xl sm:text-5xl leading-tight tracking-tight">
+                                Transparencia y<br class="hidden sm:block" /> código abierto
+                            </h2>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Card 1: Repository -->
+                            <div
+                                class="group relative rounded-2xl border border-kinetic-neutralBg bg-kinetic-secondary p-8 transition-all duration-300 transform hover:-translate-y-0.5 hover:border-kinetic-primary flex flex-col justify-between">
+                                <div>
+                                    <div
+                                        class="flex h-12 w-12 items-center justify-center rounded-xl bg-kinetic-neutralBg/60 text-kinetic-primary mb-6 transition-colors duration-300 group-hover:bg-kinetic-primary/10">
+                                        <!-- GitHub Icon -->
+                                        <svg viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.48.000-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.068.069-.068 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.577.688.479C19.138 20.164 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+                                        </svg>
+                                    </div>
+                                    <h3 class="font-headline font-bold uppercase text-lg tracking-tight mb-3">
+                                        Repositorio del Proyecto</h3>
+                                    <p class="font-body text-sm text-white/55 leading-relaxed mb-6">
+                                        Explora la arquitectura limpia del software, el historial de confirmaciones de
+                                        Git y las métricas de desarrollo implementadas en Kinetic.
+                                    </p>
+                                </div>
+                                <a :href="repoUrl" target="_blank"
+                                    class="inline-flex items-center justify-center gap-2 rounded-xl border border-kinetic-neutralBg bg-kinetic-darkBg/50 px-6 py-3.5 font-headline font-bold uppercase tracking-wide text-sm text-white/80 transition-all duration-300 transform hover:-translate-y-0.5 hover:border-kinetic-primary hover:text-white mt-auto">
+                                    Ver Código Fuente
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                        class="h-4 w-4">
+                                        <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <!-- Card 2: Memory / Document -->
+                            <div
+                                class="group relative rounded-2xl border border-kinetic-neutralBg bg-kinetic-secondary p-8 transition-all duration-300 transform hover:-translate-y-0.5 hover:border-kinetic-tertiary flex flex-col justify-between">
+                                <div>
+                                    <div
+                                        class="flex h-12 w-12 items-center justify-center rounded-xl bg-kinetic-neutralBg/60 text-kinetic-tertiary mb-6 transition-colors duration-300 group-hover:bg-kinetic-tertiary/10">
+                                        <!-- File/Doc Icon -->
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                            class="h-6 w-6">
+                                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <h3 class="font-headline font-bold uppercase text-lg tracking-tight mb-3">Memoria
+                                        Técnica</h3>
+                                    <p class="font-body text-sm text-white/55 leading-relaxed mb-6">
+                                        Consulta la documentación oficial del sistema. Incluye los requisitos, diagramas
+                                        de arquitectura, justificación del stack tecnológico y metodologías ágiles
+                                        aplicadas.
+                                    </p>
+                                </div>
+                                <a :href="docUrl" download
+                                    class="inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-kinetic-primary to-kinetic-tertiary px-6 py-3.5 font-headline font-bold uppercase tracking-wide text-sm text-kinetic-darkBg shadow-xl shadow-kinetic-primary/15 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-kinetic-tertiary/20 mt-auto">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                        class="h-4 w-4">
+                                        <path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                    Descargar Memoria
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>
